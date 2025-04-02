@@ -1,285 +1,307 @@
+📬 Telegram Bot for Scheduled Mass Messaging
+
+Looking to send mass messages to your subscribers on a schedule? This bot makes it easy to send bulk messages at specific times, helping you keep your audience engaged without manual intervention!
+With this bot, you can automate your communication with a large group of people, sending personalized messages, reminders, or announcements automatically.
+
+✅ What does it do?
+
+ • 📅 Allows scheduling of mass messages to your subscribers
+ • 📲 Supports sending texts, images, and videos
+ • 🔄 Easily handles subscription and unsubscription
+ • 📊 Manages a database of subscribers
+
+🔧 Features
+
+✅ Simple message scheduling and management
+✅ Customizable message content (texts, images, videos)
+✅ User-friendly subscription management for effortless user interaction
+
+📩 Need to automate your messaging campaigns?
+
+Contact me on Telegram, and I’ll help you set up this bot to streamline your communication! 🚀
+
 ===================================================
-ИНСТРУКЦИЯ ПО УСТАНОВКЕ И ЗАПУСКУ TELEGRAM-БОТА
+INSTRUCTIONS FOR INSTALLING AND LAUNCHING A TELEGRAM BOT
 ===================================================
 
-Этот файл содержит подробные инструкции по установке и запуску 
-Telegram-бота для массовых рассылок на Windows и Linux.
+This file contains detailed installation and startup instructions. 
+Telegram bot for mass mailing on Windows and Linux.
 
 
-СОДЕРЖАНИЕ:
+CONTENT:
 -----------
-1. Что делает этот бот
-2. Установка Python
-   - Для Windows
-   - Для Linux
-3. Скачивание и настройка бота
-4. Создание Telegram-бота через BotFather
-5. Настройка бота
-6. Запуск бота
-   - В Windows
-   - В Linux
-7. Основные команды бота
-8. Решение проблем
+1. What is this bot doing?
+2. Installing Python
+   - For Windows
+   - For Linux
+3. Download and configure the bot
+4. Creating a Telegram bot via BotFather
+5. Setting up the bot
+6. Running the bot
+- In Windows
+   - On Linux
+7. Basic Bot Commands
+8. Problem solving
 
 
-1. ЧТО ДЕЛАЕТ ЭТОТ БОТ
+1. WHAT DOES THIS BOT DO?
 ---------------------
-Этот Telegram-бот предназначен для отправки массовых рассылок подписчикам.
-Функции бота:
-- Управление подписками пользователей
-- Отправка сообщений всем подписчикам сразу
-- Планирование рассылок на определенное время
-- Поддержка разных типов сообщений (текст, фото, видео)
+This Telegram bot is designed to send mass mailings to subscribers.
+Bot Functions:
+- Manage user subscriptions
+- Sending messages to all subscribers at once
+- Schedule mailings for a specific time
+- Support for different types of messages (text, photo, video)
 
 
-2. УСТАНОВКА PYTHON
+2. INSTALLING PYTHON
 ------------------
 
-ДЛЯ WINDOWS:
+FOR WINDOWS:
 ------------
 
-1. Скачайте Python 3.10.11:
-   - Перейдите по ссылке: https://www.python.org/downloads/release/python-31011/
-   - Прокрутите вниз до раздела "Files" и скачайте "Windows installer (64-bit)"
+1. Download Python 3.10.11:
+- Follow the link: https://www.python.org/downloads/release/python-31011 /
+- Scroll down to the "Files" section and download the "Windows installer (64-bit)"
 
-2. Установите Python:
-   - Запустите скачанный файл
-   - ВАЖНО: Поставьте галочку "Add Python 3.10 to PATH" в начале установки!
-   - Нажмите "Install Now"
+2. Install Python:
+   - Run the downloaded file
+   - IMPORTANT: Check the box "Add Python 3.10 to PATH" at the beginning of the installation!
+   - Click "Install Now"
 
-3. Проверьте установку:
-   - Откройте командную строку (нажмите Win+R, введите "cmd" и нажмите Enter)
-   - Введите команду: python --version
-   - Должно появиться сообщение с версией Python (например, "Python 3.10.11")
+3. Check the installation:
+- Open the command prompt (press Win+R, type "cmd" and press Enter)
+   - Enter the command: python --version
+   - A message should appear with the Python version (for example, "Python 3.10.11")
 
 
-ДЛЯ LINUX:
+FOR LINUX:
 ----------
 
-1. Откройте терминал (Ctrl+Alt+T в Ubuntu)
+1. Open a terminal (Ctrl+Alt+T in Ubuntu)
 
-2. Установите необходимые пакеты:
+2. Install the necessary packages:
    ```
    sudo apt update
    sudo apt install software-properties-common
    ```
 
-3. Добавьте репозиторий Python и установите Python 3.10:
-   ```
+3. Add the Python repository and install Python 3.10:
+``
    sudo add-apt-repository ppa:deadsnakes/ppa
    sudo apt update
    sudo apt install python3.10 python3.10-venv python3.10-dev python3-pip
    ```
 
-4. Проверьте установку:
-   ```
+4. Check the installation:
+``
    python3.10 --version
    ```
-   Должно появиться сообщение "Python 3.10.x"
+   The message "Python 3.10.x" should appear
 
 
-3. СКАЧИВАНИЕ И НАСТРОЙКА БОТА
+3. DOWNLOAD AND CONFIGURE THE BOT
 -----------------------------
 
-ДЛЯ WINDOWS:
+FOR WINDOWS:
 ------------
 
-1. Создайте папку для бота:
-   - Откройте проводник
-   - Создайте новую папку, например, C:\telegram-bot
+1. Create a folder for the bot:
+   - Open the explorer
+   - Create a new folder, for example, C:\telegram-bot
 
-2. Сохраните все файлы бота в эту папку:
-   - main.py
-   - requirements.txt
-   - .env (создадим позже)
+2. Save all the bot files to this folder:
+- main.py
+- requirements.txt
+- .env (we'll create it later)
 
 
-ДЛЯ LINUX:
+FOR LINUX:
 ----------
 
-1. Создайте папку для бота:
+1. Create a folder for the bot:
    ```
    mkdir ~/telegram-bot
    cd ~/telegram-bot
    ```
 
-2. Сохраните все файлы бота в эту папку:
-   - main.py
-   - requirements.txt
-   - .env (создадим позже)
+2. Save all the bot files to this folder:
+- main.py
+- requirements.txt
+- .env (we'll create it later)
 
 
-4. СОЗДАНИЕ TELEGRAM-БОТА ЧЕРЕЗ BOTFATHER
+4. CREATING A TELEGRAM BOT VIA BOTFATHER
 ---------------------------------------
 
-1. Откройте Telegram и найдите @BotFather (официальный бот для создания ботов)
+1. Open Telegram and find @BotFather (the official bot creation bot)
 
-2. Напишите команду: /newbot
+2. Write the command: /newbot
 
-3. Придумайте имя для вашего бота (например, "Мой бот рассылки")
+3. Come up with a name for your bot (for example, "My Mailing bot")
 
-4. Придумайте username для бота, который должен заканчиваться на "bot" 
-   (например, "my_newsletter_bot")
+4. Come up with a username for the bot that should end with "bot"
+(for example, "my_newsletter_bot")
 
-5. После успешного создания BotFather даст вам TOKEN бота. 
-   Это выглядит примерно так: 1234567890:ABCDefGhIJKlmNoPQRsTUVwxyZ
+5. After successful creation, BotFather will give you a bot TOKEN. 
+   It looks something like this: 1234567890:ABCDefGhIJKlmNoPQRsTUVwxyZ
 
-6. ВАЖНО: Сохраните этот токен! Он понадобится для настройки бота.
+6. IMPORTANT: Save this token! You will need it to set up the bot.
 
 
-5. НАСТРОЙКА БОТА
+5. SETTING UP THE BOT
 ---------------
 
-1. Создайте файл .env в папке с ботом:
+1. Create a file.env in the bot folder:
 
-ДЛЯ WINDOWS:
+FOR WINDOWS:
 ------------
-   - Откройте Блокнот (Notepad)
-   - Вставьте:
+- Open Notepad
+And Paste It In:
      ```
-     BOT_TOKEN=ваш_токен_от_BotFather
-     ADMIN_IDS=ваш_id_в_телеграм
-     ```
-   - Замените "ваш_токен_от_BotFather" на токен, полученный от BotFather
-   - Замените "ваш_id_в_телеграм" на ваш Telegram ID (узнать его можно у бота @userinfobot)
-   - Сохраните файл с именем ".env" (с точкой в начале) в папке с ботом
+     BOT_TOKEN=YOUR_TOKEN_OT_BOTFATHER
+     ADMIN_IDS=your_id_in_thelegram
+     ``
+- Replace "your_token_ot_botfather" with the token received from BotFather
+   - Replace "your_id_in telegram" with your Telegram ID (you can find it from the bot @userinfobot)
+   - Save the file named ".env" (with a dot at the beginning) in the bot folder
    
-   ВНИМАНИЕ: При сохранении файла в Блокноте укажите:
-   - Имя файла: .env
-   - Тип файла: Все файлы (а не Текстовые документы)
+   attention: When saving the file in Notepad, specify:
+   - File name: .env
+- File type: All files (not Text documents)
 
-ДЛЯ LINUX:
+FOR LINUX:
 ----------
-   - Откройте терминал и перейдите в папку с ботом
-   - Выполните команду:
+- Open the terminal and navigate to the folder with the bot
+- Run the command:
      ```
      nano .env
+     ``
+- Insert:
      ```
-   - Вставьте:
-     ```
-     BOT_TOKEN=ваш_токен_от_BotFather
-     ADMIN_IDS=ваш_id_в_телеграм
-     ```
-   - Замените "ваш_токен_от_BotFather" на токен, полученный от BotFather
-   - Замените "ваш_id_в_телеграм" на ваш Telegram ID
-   - Сохраните файл: нажмите Ctrl+O, затем Enter, затем Ctrl+X для выхода
+     BOT_TOKEN=YOUR_TOKEN_OT_BOTFATHER
+     ADMIN_IDS=your_id_in_thelegram
+     ``
+- Replace "your_token_ot_botfather" with the token received from BotFather
+   - Replace "your_id_in telegram" with your Telegram ID
+   - Save the file: press Ctrl+O, then Enter, then Ctrl+X to exit
 
 
-6. УСТАНОВКА ЗАВИСИМОСТЕЙ И ЗАПУСК БОТА
+6. INSTALL DEPENDENCIES AND LAUNCH THE BOT
 -------------------------------------
 
-ДЛЯ WINDOWS:
+FOR WINDOWS:
 ------------
 
-1. Откройте командную строку от имени администратора:
-   - Нажмите Win + X
-   - Выберите "Windows Terminal (Администратор)" или "Командная строка (Администратор)"
+1. Open the command prompt as an administrator:
+   - Press Win + X
+- Select "Windows Terminal (Administrator)" or "Command Prompt (Administrator)"
 
-2. Перейдите в папку с ботом:
-   ```
+2. Go to the bot folder:
+``
    cd C:\путь\к\вашей\папке\telegram-bot
    ```
-   Например: `cd C:\telegram-bot`
+   For example: `cd C:\telegram-bot `
 
-3. Создайте виртуальное окружение:
+3. Create a virtual environment:
    ```
    python -m venv venv
    ```
 
-4. Активируйте виртуальное окружение:
+4. Activate the virtual environment:
    ```
    venv\Scripts\activate
    ```
-   В командной строке должен появиться префикс (venv)
+   The prefix (venv) should appear on the command line.
 
-5. Установите зависимости:
-   ```
+5. Install the dependencies:
+``
    pip install -r requirements.txt
    ```
 
-6. Запустите бота:
+6. Launch the bot:
    ```
    python main.py
    ```
 
-ДЛЯ LINUX:
+FOR LINUX:
 ----------
 
-1. Откройте терминал и перейдите в папку с ботом:
-   ```
+1. Open the terminal and navigate to the folder with the bot:
+``
    cd ~/telegram-bot
    ```
 
-2. Создайте виртуальное окружение:
+2. Create a virtual environment:
    ```
    python3.10 -m venv venv
    ```
 
-3. Активируйте виртуальное окружение:
+3. Activate the virtual environment:
    ```
    source venv/bin/activate
    ```
-   В терминале должен появиться префикс (venv)
+   The prefix (venv) should appear in the terminal.
 
-4. Установите зависимости:
-   ```
+4. Install the dependencies:
+``
    pip install -r requirements.txt
    ```
 
-5. Запустите бота:
+5. Launch the bot:
    ```
    python main.py
    ```
 
 
-7. ОСНОВНЫЕ КОМАНДЫ БОТА
+7. BASIC BOT COMMANDS
 ----------------------
 
-После запуска вы можете использовать следующие команды в чате с ботом:
+After launching, you can use the following commands to chat with the bot:
 
-ДЛЯ ВСЕХ ПОЛЬЗОВАТЕЛЕЙ:
-- /start - начало работы с ботом
-- /subscribe - подписаться на рассылку
-- /unsubscribe - отписаться от рассылки
-- /status - проверить статус подписки
+FOR ALL USERS:
+- /start - getting started with the bot
+- /subscribe - subscribe to the newsletter
+- /unsubscribe - unsubscribe from the mailing
+list - /status - check the subscription status
 
-ТОЛЬКО ДЛЯ АДМИНИСТРАТОРОВ:
-- /send_message - отправить сообщение всем подписчикам
-- /stats - просмотр статистики бота (подписчики, рассылки)
+FOR ADMINISTRATORS ONLY:
+- /send_message - send a message to all subscribers
+- /stats - view bot statistics (subscribers, mailing lists)
 
 
-8. РЕШЕНИЕ ПРОБЛЕМ
+8. PROBLEM SOLVING
 ----------------
 
-Проблема: Бот не запускается, выдает ошибку "No module named 'aiogram'"
-Решение: Проверьте, что вы активировали виртуальное окружение и установили зависимости
+Problem: The bot does not start, it gives the error "No module named 'aiogram'"
+Solution: Make sure that you have activated the virtual environment and installed the dependencies
 
-Проблема: При запуске бота ошибка "No such file or directory"
-Решение: Убедитесь, что вы находитесь в правильной папке с файлами бота
+Problem: When starting the bot, the error is "No such file or directory"
+Solution: Make sure you are in the correct folder with the bot files.
 
-Проблема: Бот запустился, но не отвечает на команды
-Решение: 
-- Проверьте, правильно ли указан токен в файле .env
-- Убедитесь, что бот запущен (в консоли должно быть сообщение "Бот запущен и готов к работе!")
-- В Telegram найдите вашего бота по имени и нажмите кнопку "Start" или отправьте команду /start
+Problem: The bot has started, but does not respond to commands.
+Decision: 
+- Check if the token is specified correctly in the .env file.
+- Make sure that the bot is running (the console should have the message "The bot is running and ready to work!")
+- In Telegram, find your bot by name and click the "Start" button or send the command /start
 
-Проблема: Бот отвечает, но не работают команды администратора
-Решение: Проверьте, правильно ли указан ваш ID в файле .env (в параметре ADMIN_IDS)
+Problem: The bot responds, but the admin commands don't work.
+Solution: Check if your ID is specified correctly in the .env file (in the ADMIN_IDS parameter)
 
 
-ЗАПУСК БОТА ПРИ СЛЕДУЮЩЕМ ИСПОЛЬЗОВАНИИ
+LAUNCHING THE BOT THE NEXT TIME YOU USE IT
 -------------------------------------
 
-ДЛЯ WINDOWS:
-- Откройте командную строку
-- Перейдите в папку с ботом: `cd C:\путь\к\telegram-bot`
-- Активируйте виртуальное окружение: `venv\Scripts\activate`
-- Запустите бота: `python main.py`
+FOR WINDOWS:
+- Open the command prompt
+- Go to the folder with the bot: `cd C:\путь\к\telegram-bot `
+- Activate the virtual environment: `venv\Scripts\activate`
+- Launch the bot: `python main.py `
 
-ДЛЯ LINUX:
-- Откройте терминал
-- Перейдите в папку с ботом: `cd ~/telegram-bot`
-- Активируйте виртуальное окружение: `source venv/bin/activate`
-- Запустите бота: `python main.py`
+FOR LINUX:
+- Open the terminal
+- Go to the folder with the bot: `cd~/telegram-bot`
+- Activate the virtual environment: `source venv/bin/activate`
+- Launch the bot: `python main.py `
 
-Для остановки бота: нажмите Ctrl+C в окне командной строки/терминала
+To stop the bot: press Ctrl+C in the command prompt/terminal window
